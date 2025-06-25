@@ -1,0 +1,94 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
+    color: #ffffff;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  .container {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.1);
+    position: relative;
+    z-index: 2;
+  }
+  
+  h1 {
+    font-size: 2.2em;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    font-size: 1.1em;
+    margin-bottom: 25px;
+    line-height: 1.5;
+  }
+  
+  a.button {
+    display: inline-block;
+    padding: 12px 24px;
+    background: #00ffff;
+    color: #000;
+    font-weight: bold;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  a.button:hover {
+    background: #00cccc;
+    transform: scale(1.05);
+  }
+  
+  /* Background glitch effect */
+  .glitch {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: repeating-linear-gradient(
+      45deg,
+      #00ffff10,
+      #00ffff10 10px,
+      transparent 10px,
+      transparent 20px
+    );
+    animation: glitchAnim 3s linear infinite;
+    z-index: 0;
+    pointer-events: none;
+  }
+  
+  @keyframes glitchAnim {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(10px, -10px); }
+    100% { transform: translate(0, 0); }
+  }
+  
+  @media (max-width: 600px) {
+    .container {
+      padding: 20px;
+    }
+  
+    h1 {
+      font-size: 1.6em;
+    }
+  
+    p {
+      font-size: 1em;
+    }
+  }
+  
